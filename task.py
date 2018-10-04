@@ -1,15 +1,15 @@
 
 import random
 list_var = "~\|/"
-list = ""
+list = []
 for i in range(10):
     rand = random.choice(list_var)
     if rand == "~":
         if i == 0 or list[i-1] == "-":
             rand = "-"
-    list = list + rand
+    list.append(rand)
 
-print(list)
+print(list[0]+list[1]+list[2]+list[3]+list[4]+list[5]+list[6]+list[7]+list[8]+list[9])
 
 print("Введите изменения в форме \"00\", где:\n"
       "первая цифра - позиция звена электроцепи\n"
@@ -17,7 +17,7 @@ print("Введите изменения в форме \"00\", где:\n"
 
 
 
-while list != "----------":
+while list != "[-],[-],[-],[-],[-],[-],[-],[-],[-],[-]":
     ans = input()
     while len(ans) != 2 or not (ans.isdecimal()):
         print("Неверный формат ввода")
@@ -33,8 +33,9 @@ while list != "----------":
         pos = int(ans[0])
         tur = int(ans[1])
 
-        list = list.replace(list[int(ans[0])],"*")
-        print(list)
+        
 
+        list[pos] = str(tur)
+        print(list[0] + list[1] + list[2] + list[3] + list[4] + list[5] + list[6] + list[7] + list[8] + list[9])
 print("end")
 
