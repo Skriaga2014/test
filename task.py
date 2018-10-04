@@ -17,7 +17,7 @@ print("Введите изменения в форме \"00\", где:\n"
 
 
 
-while list != "[-],[-],[-],[-],[-],[-],[-],[-],[-],[-]":
+while list != ["-","-","-","-","-","-","-","-","-","-"]:
     ans = input()
     while len(ans) != 2 or not (ans.isdecimal()):
         print("Неверный формат ввода")
@@ -33,9 +33,15 @@ while list != "[-],[-],[-],[-],[-],[-],[-],[-],[-],[-]":
         pos = int(ans[0])
         tur = int(ans[1])
 
-        
-
-        list[pos] = str(tur)
+        #print((list_var.index(list[pos])+tur)%len(list_var))
+        list[pos] = list_var[(list_var.index(list[pos])+tur)%len(list_var)]
+        s = 0
+        if list[pos] == "~":
+            while pos+s < len(list) and list[pos+s] == "~":
+                list[pos+s] = "-"
+                s +=1
         print(list[0] + list[1] + list[2] + list[3] + list[4] + list[5] + list[6] + list[7] + list[8] + list[9])
-print("end")
+        #print(list)
+
+print("!!!!!END!!!!!")
 
